@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% if rpi %}{{ rpi.id }}{% else %}rpis{% endif %}</title>
+</head>
+<body>
+	{% if rpi %}{{ rpi.name }}{% endif %}
+	<form action="" method="post">
+		{{ form.name.label }} : {{ form.name }} <br>
+		{{ form.ip.label }}: {{ form.ip }} <br>
+		{{ form.ps.label }}: {{ form.ps }} <br>
+		{{ form.rt.label }}: {{ form.rt }} <br>
+		{{ form.ta.label }}: {{ form.ta }} <br>
+		{{ form.csrf_token }}
+		<input type="submit" value="submit">
+	</form>
+	{% for error in errors %}
+	<p>{{ error }}</p>
+	{% endfor %}
+</body>
+</html>

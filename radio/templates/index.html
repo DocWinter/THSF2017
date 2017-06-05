@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Radio</title>
+</head>
+<body>
+
+	<h3>Update all</h3>
+	<form action="" method="post">
+		{{ form.ps.label }}: {{ form.ps }} <br>
+		{{ form.rt.label }}: {{ form.rt }} <br>
+		{{ form.ta.label }}: {{ form.ta }} <br>
+		<input type="submit" value="Submit">
+		{{ form.csrf_token }}
+	</form>
+	<h3>RPIs</h3>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Ip</th>
+			<th>Program Service</th>
+			<th>Radio Text</th>
+			<th>Traffic Announcement</th>
+			<th>Modify</th>
+			<th>Delete</th>
+		</tr>
+		{% for rpi in rpis %}
+		<tr>
+			<td>{{ rpi.name }}</td>
+			<td>{{ rpi.ip }}</td>
+			<td>{{ rpi.ps }}</td>
+			<td>{{ rpi.rt }}</td>
+			<td>{% if rpi.ta %}yes{% else %}no{% endif %}</td>
+			<td><a href="rpi/{{rpi.id}}">x</a></td>
+			<td><a href="rpi/{{rpi.id}}/del">x</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

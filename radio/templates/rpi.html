@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rpi {{ rpi.id }}</title>
+</head>
+<body>
+	<h2>{{ rpi.name }}</h2>
+
+	<form action="" method="post">
+		{{ form.name.label }} : {{ form.name }} <br>
+		{{ form.ip.label }}: {{ form.ip }} <br>
+		{{ form.ps.label }}: {{ form.ps }} <br>
+		{{ form.rt.label }}: {{ form.rt }} <br>
+		{{ form.ta.label }}: {{ form.ta }} <br>
+	</form>
+</body>
+</html>
